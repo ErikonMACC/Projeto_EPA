@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=MedievalSharp&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../images/Background.jpg);
+    background-size: 100% 769px;
+}
+
+.scoreBoard {
+    width: 25.5%;
+    background-image: url(../images/ScoreBackground.png);
+    background-size: 410px 82px;
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding: 15px;
+    padding-left: 70px;
+}
+
+.score_val {
+    font-size: 46px;
+    font-family: 'MedievalSharp';
+    color: rgb(201, 47, 0);
+    margin-left: 10px;
+}
+
+.score_title {
+    font-size: 46px;
+    font-family: 'MedievalSharp';
+    color: rgb(75, 34, 0);
+    margin-left: 10px;
+}
+
+.floor {
+    width: 100%;
+    position: absolute;
+    bottom: -200px;
+    animation: floor_animation 4s infinite linear;
+}
+
+.floor2 {
+    width: 100%;
+    position: absolute;
+    bottom: -200px;
+    animation:
+    floor_animation2 2s infinite linear,
+    floor_animation 4s infinite linear 2s;
+}
+
+.cloud1 {
+    position: absolute;
+    width: 300px;
+    animation: cloud_animation 16s infinite linear ;
+}
+
+.cloud2 {
+    position: absolute;
+    right: -200px;
+    width: 200px;
+    animation: cloud_animation 18s infinite linear 4s;
+}
+
+.cloud3 {
+    position: absolute;
+    right: -250px;
+    width: 250px;
+    animation: cloud_animation 20s infinite linear 7s;
+}
+
+.castle {
+    position: absolute;
+    bottom: 5px;
+    width: 130px;
+    height: 120px;
+    animation: castle_animation 1.8s infinite linear;
+}
+
+.knight {
+    position: absolute;
+    width: 200px;
+    bottom: 0px;
+    left: 80px;
+}
+
+.jump {
+    animation: knight_jump 700ms ease-out;
+}
+
+@keyframes floor_animation {
+    from {
+        right: -100%;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes floor_animation2 {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes castle_animation {
+    from {
+        right: -130px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes knight_jump {
+    0% {
+        bottom: 0px;
+    }
+
+    25% {
+        bottom: 160px;
+    }
+
+    45% {
+        bottom: 170px;
+    }
+
+    60% {
+        bottom: 160px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+@keyframes cloud_animation {
+    from {
+        right: -300px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
