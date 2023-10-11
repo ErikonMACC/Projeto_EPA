@@ -94,7 +94,7 @@
 }
 
 .jump {
-    animation: knight_jump 700ms ease-out;
+    animation: knight_jump 800ms ease-out;
 }
 
 @keyframes floor_animation {

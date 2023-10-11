@@ -6,21 +6,23 @@ const knight = document.querySelector('.knight')
 const castle = document.querySelector('.castle')
 const floor1 = document.querySelector('.floor')
 const floor2 = document.querySelector('.floor2')
-const sound_die = new Audio('../sounds/deathSound.mp3');
-const pointing = new Audio('../sounds/pointUp.mp3');
-const jumping = new Audio('../sounds/jump.mp3');
-
+const sound_die = document.querySelector('.death')
+const pointing = document.querySelector('.point')
+const jumping = document.querySelector('.jump')
 
 const jump = () => {
     knight.classList.add('jump')
+    jumping.play();
 
     setTimeout(() => {
 
-        knight.classList.remove('jump')
-        jumping.play();
-
-    }, 700)
+        knight.classList.remove('jump')      
+        
+    }, 800)
+    
 }
+
+document.addEventListener('keydown', jump);
 
 score_title.innerHTML = 'Pontos: ';
 score_val.innerHTML = '0';
@@ -44,7 +46,7 @@ const loop = setInterval(() => {
         knight.style.animation = 'none' ;
         knight.style.bottom = `${knightPosition}px` ;
 
-        knight.src = '/images/Death.png' ;
+        knight.src = 'images/Death.png' ;
         knight.style.width = '270px' ; 
         knight.style.marginLeft = '-100px' ;
         knight.style.marginBottom = '-25px' ;
@@ -69,5 +71,3 @@ const loop = setInterval(() => {
     }
     frames = frames + 1;
 }, 10)
-
-document.addEventListener('keydown', jump);
